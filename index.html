@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>London Breweries</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+   integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+   crossorigin=""></script>
+   <script src="map.js" type="text/javascript"></script>
+   <script src="mapData.js" type="text/javascript"></script>
+
+</head>
+<body onload="initialise()">
+<h1>LONDON BREWERIES INTERACTIVE MAP </h1>
+<div id="mapid"></div>
+<div id ="queryForm">
+	<h2> Data Selection </h2>
+	<?php
+		echo "<form action='".$_SERVER['SCRIPT_NAME']."' method='get'>";
+	?>	
+
+	<!-- <p> Type of Beer<br>
+	<input type=radio name=Filter_Beer  value=0 checked>All Beer<br>
+	<input type=radio name=Filter_Beer  value="Ale">Ale<br>
+	<input type=radio name=Filter_Beer  value="Altbier">Altbier<br>
+	<input type=radio name=Filter_Beer  value="Amber_Ale">Amber Ale<br>
+	<input type=radio name=Filter_Beer  value="Berliner">Berliner<br>
+	<input type=radio name=Filter_Beer  value="Blonde">Blonde<br>
+	<input type=radio name=Filter_Beer  value="IPA">IPA<br>
+	<input type=radio name=Filter_Beer   value="Lager">Lager<br>	
+	<input type=radio name=Filter_Beer   value="Light_Ale">Light Ale<br>
+	<input type=radio name=Filter_Beer   value="Other">Other<br>
+	<input type=radio name=Filter_Beer   value="Oyster_Stout">Oyster Stout<br>
+	<input type=radio name=Filter_Beer   value="Pale_Ale">Pale Ale<br>
+	<input type=radio name=Filter_Beer   value="Pilsner">Light Ale<br>
+	<input type=radio name=Filter_Beer   value="Red_Ale">Red Ale<br>
+	<input type=radio name=Filter_Beer   value="Light_Ale">Ruby Ale<br>
+	<input type="radio" name=Filter_Beer value="Saison"> Saison <br>
+	<input type="radio" name=Filter_Beer value="Stout">Stout <br> -->
+
+ 	<!-- <select name = "TypeOfBeer">
+ 		<option value="Ale">Ale</option>
+ 		<option value="Altbier">Altbier</option>
+ 		<opt -->
+	<input type=submit value='Submit'>
+	</form>  
+</div>
+</body>
+</html>

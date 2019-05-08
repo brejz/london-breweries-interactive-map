@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>About Beer</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+</head>
+<body>
+
+<div class="container page-header">
+   <a href="index.php" class="btn btn-warning" role="button"><i class="fa fa-hand-o-left" aria-hidden="true"></i> Back</a>
+    <h1>About Breweries and Map </h1>      
+</div>
+
+<div class="container " style="color: white;">
+<div class ="row">
+<div class="col-sm-4" id = "aboutCard">
+<h2>About Interactive Map </h2>
+The purpose for this map us to give beer enthuists an in-depth view of the type of breweries and brewpubs which are currently available in London. This map also provides insights from various resources, allowing the user to filter by beer type or type of brewery.
+</div>
+<div class="container col-sm-8" id="containerMap">
+<h2 style="text-align: left">Defining Breweries</h2>
+<p> A brewery or brewing company is a business that makes and sells beer. The place at which beer is commercially made is either called a brewery or a beerhouse, where distinct sets of brewing equipment are called plant.  </p>
+<p> A Brewpub is an abbreviated term combining the ideas of a brewery and a pub or public-house. A brewpub can take the form of a pub or restaurant that brews beer on the premises.
+</div>
+
+<div class="container col-sm-8" id="containerMap">
+<h2> Insights - Clustering</h2>
+ <img src="brewDens.png" alt="Map Clustering" style="width:800px;height:600px;"> 
+ <p> Through the functionalities of the Leaflet library I was able to draw a circle to represent the geatest density of brewpubs. As we can see from the above image, the greatest denity of brewpubs can found in Central London, compromising of 23 breweries.  </p>
+</div>
+
+<div class="container col-sm-8" id="containerMap">
+<h2> Insights - Longest Distance</h2>
+<img src="brewDist.png" alt="Map Distance" style="width:800px;height:600px;"> 
+ <p> Once again, through the Leaflet library we were able to draw a line representing the brewpubs which were furthest away in the London Buroughs. The two pubs which are furthest away are 'The Black Horse' and 'The Cronx'. These breweries are 54.5 miles apart.</p>
+</div>
+
+<div class="container col-sm-8" id="containerMap">
+<h2> Insights - Brewpubs</h2>
+<canvas id="myChart2" width="400" height="400"></canvas>
+ <p> By using the Chart JS libary, I was able to draw a bar chart to represent the amount of breweries which are brewpubs and the ones which aren't. As cann be seen from the diagram there are a total of 45 breweries which are brewpubs, while 24 are not. </p>
+</div>
+
+
+
+</div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+var ctx = document.getElementById("myChart2").getContext("2d");
+var myChart2 = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Yes", "No"],
+        datasets: [{
+            label: 'Brewpub',
+            data: [45, 25 ],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+</body>
+</html>
+
+
+
+
